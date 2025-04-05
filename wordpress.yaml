@@ -159,7 +159,7 @@ kind: Route
 metadata:
   name: wordpress
 spec:
-  host: wordpress-multilayer-app.apps.ocp4.example.com
+  # host: wordpress-multilayer-app.apps.ocp4.example.com
   path: /
   to:
     kind: Service
