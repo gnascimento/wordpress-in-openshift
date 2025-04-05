@@ -153,23 +153,3 @@ spec:
   ports:
     - port: 3306
       targetPort: 3306
----
-apiVersion: route.openshift.io/v1
-kind: Route
-metadata:
-  name: wordpress
-  annotations:
-    openshift.io/host.generated: "true"
-spec:
-  # host: wordpress-multilayer-app.apps.ocp4.example.com
-  path: /
-  to:
-    kind: Service
-    name: wordpress
-    weight: 100
-  port:
-    targetPort: "8080"
-  tls:
-  wildcardPolicy: None
-  routerName: default
-  routerCanonicalHostname: router-default.app.apps.ocp4.example.com
