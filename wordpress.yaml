@@ -159,7 +159,7 @@ kind: Route
 metadata:
   name: wordpress
   annotations:
-    haproxy.router.openshift.io/host.generated: "true"
+    openshift.io/host.generated: "true"
 spec:
   # host: wordpress-multilayer-app.apps.ocp4.example.com
   path: /
@@ -168,7 +168,7 @@ spec:
     name: wordpress
     weight: 100
   port:
-    targetPort: 80
+    targetPort: "80"
   tls:
   wildcardPolicy: None
   routerName: default
