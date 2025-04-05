@@ -16,8 +16,6 @@ oc get all
 
 echo "Criando a rota no OpenShift para export o serviço..."
 oc expose svc wordpress --name=wordpress --port=8080 --path=/ --wildcard-policy=None
-echo "Aguardando a rota ser criada..."
-oc wait --for=condition=available route/wordpress --timeout=120s    
 
 echo "Aplicação implantada! Verifique a rota com:"
 oc get route wordpress
