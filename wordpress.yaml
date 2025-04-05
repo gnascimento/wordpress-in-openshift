@@ -159,10 +159,12 @@ kind: Route
 metadata:
   name: wordpress
 spec:
+  host: wordpress-multilayer-app.apps.ocp4.example.com
+  path: /
   to:
     kind: Service
     name: wordpress
+    weight: 100
   port:
-    targetPort: 80
-  tls:
-    termination: edge
+    targetPort: 8080
+  wildcardPolicy: None
